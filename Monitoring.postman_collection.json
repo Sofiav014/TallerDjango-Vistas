@@ -624,7 +624,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Measurement Copy",
+			"name": "Delete Measurement",
 			"event": [
 				{
 					"listen": "prerequest",
