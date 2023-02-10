@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1d9a3221-6183-4de0-a3e1-f80a0e0a3c17",
+		"_postman_id": "8c8aec77-df26-46b9-b2fc-1bdd2ea1926a",
 		"name": "Monitoring",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25797145"
 	},
 	"item": [
 		{
@@ -136,15 +137,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables",
 							"host": [
@@ -204,15 +196,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables?id=3",
 							"host": [
@@ -431,6 +414,253 @@
 					"body": "[\n    {\n        \"model\": \"variables.variable\",\n        \"pk\": 3,\n        \"fields\": {\n            \"name\": \"New Var\"\n        }\n    }\n]"
 				}
 			]
+		},
+		{
+			"name": "Create Measurement",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  4,\r\n    \"value\": 10.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Measurements",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  4,\r\n    \"value\": 10.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Measurement",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  4,\r\n    \"value\": 10.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements?id=2",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Measurement v2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  4,\r\n    \"value\": 10.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/2",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Measurement",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  1,\r\n    \"value\": 19.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/7",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Measurement Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":  1,\r\n    \"value\": 19.0,\r\n    \"unit\": \"celcius\",\r\n    \"place\": \"c9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/15",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"15"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
